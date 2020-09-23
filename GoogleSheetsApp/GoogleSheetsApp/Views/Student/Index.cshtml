@@ -1,0 +1,42 @@
+﻿@model IEnumerable<GoogleSheetsApp.Models.Student>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<p style="color:blue;font-size:25px;">
+    Student Details
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Roll)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Roll)
+            </td>
+            
+        </tr>
+    }
+ 
+</table>
+<p>@Html.ActionLink("Open in Google Sheets", "OpenGoogleSheets", "Student")</p>
+
